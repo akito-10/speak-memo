@@ -48,7 +48,7 @@ export const MainPage = () => {
         </CardContent>
       </Card>
       <Button variant="outline" onClick={resetTranscript}>
-        Reset
+        リセット
       </Button>
     </main>
   );
