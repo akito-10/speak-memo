@@ -26,7 +26,7 @@ export const MainPage = () => {
       <h1 className="text-xl mb-2">マイク</h1>
       <div className="flex items-center space-x-2 mb-8">
         <Switch
-          id="airplane-mode"
+          id="mic-switch"
           onCheckedChange={() => {
             if (listening) {
               SpeechRecognition.stopListening();
@@ -37,7 +37,7 @@ export const MainPage = () => {
             }
           }}
         />
-        <Label htmlFor="airplane-mode">{listening ? "オン" : "オフ"}</Label>
+        <Label htmlFor="mic-switch">{listening ? "オン" : "オフ"}</Label>
       </div>
       <Card className="max-w-full w-96 my-4">
         <CardHeader>
