@@ -26,22 +26,21 @@ export const MainPage = () => {
     return <main>Browser does not support speech recognition.</main>;
   }
 
+  const onClickSwitch = async () => {
+    if (listening) {
+      await SpeechRecognition.stopListening();
+    } else {
+      await SpeechRecognition.startListening({
+        continuous: true,
+      });
+    }
+  };
+
   return (
     <main className="w-full min-h-screen flex items-center justify-center flex-col">
       <h1 className="text-xl mb-2">マイク</h1>
       <div className="flex items-center space-x-2 mb-8">
-        <Switch
-          id="mic-switch"
-          onCheckedChange={() => {
-            if (listening) {
-              SpeechRecognition.stopListening();
-            } else {
-              SpeechRecognition.startListening({
-                continuous: true,
-              });
-            }
-          }}
-        />
+        <Switch id="mic-switch" onCheckedChange={onClickSwitch} />
         <Label htmlFor="mic-switch">{listening ? "オン" : "オフ"}</Label>
       </div>
       <Card className="max-w-full w-96 my-4">
