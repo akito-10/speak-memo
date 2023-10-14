@@ -37,7 +37,7 @@ export const MainPage = () => {
   };
 
   return (
-    <main className="w-full min-h-screen flex items-center justify-center flex-col">
+    <main className="w-full flex-1 min-h-screen flex items-center justify-center flex-col">
       <h1 className="text-xl mb-2">マイク</h1>
       <div className="flex items-center space-x-2 mb-8">
         <Switch id="mic-switch" onCheckedChange={onClickSwitch} />
