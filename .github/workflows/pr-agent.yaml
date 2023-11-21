@@ -27,5 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTION.AUTO_DESCRIBE: "true"
           PR_DESCRIPTION.USE_DESCRIPTION_MARKERS: "true"
+          PR_DESCRIPTION.INCLUDE_GENERATED_BY_HEADER: "false"
+          PR_DESCRIPTION.KEEP_ORIGINAL_USER_TITLE: "false"
           PR_REVIEWER.EXTRA_INSTRUCTIONS: "Please use Japanese in descriptions."
           PR_DESCRIPTION.EXTRA_INSTRUCTIONS: "Please use Japanese in descriptions. Titles should have prefix of commitlint pattern such as `feat:`, `chore:`, `test:`, `fix:`, `ci:`, `docs:` etc'"
