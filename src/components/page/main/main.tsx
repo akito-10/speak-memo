@@ -1,4 +1,5 @@
 "use client";
+
 import "regenerator-runtime";
 import SpeechRecognition, {
   useSpeechRecognition,
