@@ -15,5 +15,3 @@ yarn install
 ```
 yarn dev
 ```
-
-hoge
