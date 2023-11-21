@@ -1,5 +1,4 @@
 "use client";
-
 import "regenerator-runtime";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -37,21 +36,29 @@ export const MainPage = () => {
   };
 
   return (
-    <main className="w-full flex-1 min-h-screen flex items-center justify-center flex-col">
-      <h1 className="text-xl mb-2">マイク</h1>
+    <main className="w-full flex-1 min-h-screen flex items-center justify-center flex-col bg-gray-100">
+      <h1 className="text-3xl mb-2 text-blue-500">マイク</h1>
       <div className="flex items-center space-x-2 mb-8">
         <Switch id="mic-switch" onCheckedChange={onClickSwitch} />
-        <Label htmlFor="mic-switch">{listening ? "オン" : "オフ"}</Label>
+        <Label htmlFor="mic-switch" className="text-lg">
+          {listening ? "オン" : "オフ"}
+        </Label>
       </div>
-      <Card className="max-w-full w-96 my-4">
+      <Card className="max-w-full w-96 my-4 shadow-lg">
         <CardHeader>
-          <CardTitle className="text-center">出力</CardTitle>
+          <CardTitle className="text-center text-2xl text-blue-500">
+            出力
+          </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{transcript}</p>
+          <p className="text-lg">{transcript}</p>
         </CardContent>
       </Card>
-      <Button variant="outline" onClick={resetTranscript}>
+      <Button
+        variant="outline"
+        className="py-2 px-4 text-lg bg-blue-500 text-white"
+        onClick={resetTranscript}
+      >
         リセット
       </Button>
     </main>
