@@ -18,7 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Optional
-          LANGUAGE: 日本語
+          LANGUAGE: Japanese
           MODEL: gpt-4
           PROMPT: このコードの問題点や改善点を指摘し、コードとしての品質を担保できるようにコードレビューしてください。日本語でお願いします。
           top_p: 1
