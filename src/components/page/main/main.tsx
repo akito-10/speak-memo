@@ -23,7 +23,7 @@ export const MainPage = () => {
   } = useSpeechRecognition();
 
   if (!browserSupportsSpeechRecognition) {
-    return <main>Browser does not support speech recognition.</main>;
+    return <main>ブラウザは音声認識をサポートしていません。</main>;
   }
 
   const onClickSwitch = async () => {
