@@ -8,11 +8,45 @@ import Link from "next/link";
 import { FC } from "react";
 import { useSearchParams } from "next/navigation";
 
+type Memo = {
+  id: number;
+  title: string;
+};
+
+type MemoListProps = {
+  memos: Memo[];
+  selectedMemoId: number | undefined;
+};
+
+const MemoList: FC<MemoListProps> = ({ memos, selectedMemoId }) => (
+  <ul className="mt-2 flex flex-col">
+    {memos.map((memo) => (
+      <li key={memo.id}>
+        <Link
+          className="py-1 px-6 w-full h-full rounded-none justify-start block hover:bg-accent"
+          href={`/?memoId=${memo.id}`}
+          style={{
+            color: selectedMemoId === memo.id ? "#7cb855" : "inherit",
+          }}
+        >
+          {memo.title}
+        </Link>
+      </li>
+    ))}
+  </ul>
+);
+
 export const Menubar: FC = () => {
   const searchParams = useSearchParams();
   const selectedMemoId = searchParams.get("memoId")
     ? Number(searchParams.get("memoId"))
     : undefined;
+
+  const memos = [
+    { id: 1, title: "memo A" },
+    { id: 2, title: "memo B" },
+    { id: 3, title: "memo C" },
+  ];
 
   return (
     <header className="w-40 h-screen border-r bg-bgMain">
@@ -31,25 +65,7 @@ export const Menubar: FC = () => {
           <PlusIcon />
         </Button>
       </h3>
-      <ul className="mt-2 flex flex-col">
-        {[
-          { id: 1, title: "memo A" },
-          { id: 2, title: "memo B" },
-          { id: 3, title: "memo C" },
-        ].map((memo) => (
-          <li key={memo.id}>
-            <Link
-              className="py-1 px-6 w-full h-full rounded-none justify-start block hover:bg-accent"
-              href={`/?memoId=${memo.id}`}
-              style={{
-                color: selectedMemoId === memo.id ? "#7cb855" : "inherit",
-              }}
-            >
-              {memo.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <MemoList memos={memos} selectedMemoId={selectedMemoId} />
     </header>
   );
 };
