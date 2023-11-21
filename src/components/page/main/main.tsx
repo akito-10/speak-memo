@@ -36,31 +36,35 @@ export const MainPage = () => {
   };
 
   return (
-    <main className="w-full flex-1 min-h-screen flex items-center justify-center flex-col bg-gray-100">
-      <h1 className="text-3xl mb-2 text-blue-500">マイク</h1>
-      <div className="flex items-center space-x-2 mb-8">
-        <Switch id="mic-switch" onCheckedChange={onClickSwitch} />
-        <Label htmlFor="mic-switch" className="text-lg">
-          {listening ? "オン" : "オフ"}
-        </Label>
+    <main className="flex flex-col items-center justify-center h-screen bg-gray-200 p-4">
+      <div className="bg-white rounded-lg shadow-lg p-5 md:p-20 mx-2 w-full max-w-6xl">
+        <h1 className="text-4xl text-blue-600 mb-10 text-center">マイク</h1>
+        <div className="flex justify-center items-center space-x-4 mb-10">
+          <Switch id="mic-switch" onCheckedChange={onClickSwitch} />
+          <Label htmlFor="mic-switch" className="text-2xl">
+            {listening ? "オン" : "オフ"}
+          </Label>
+        </div>
+        <Card className="w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden m-3">
+          <CardHeader>
+            <CardTitle className="text-center text-3xl text-blue-600">
+              出力
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xl text-gray-600">{transcript}</p>
+          </CardContent>
+        </Card>
+        <div className="flex justify-center mt-10">
+          <Button
+            variant="outline"
+            className="py-2 px-4 text-lg bg-blue-600 text-white rounded hover:bg-blue-700"
+            onClick={resetTranscript}
+          >
+            リセット
+          </Button>
+        </div>
       </div>
-      <Card className="max-w-full w-96 my-4 shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-center text-2xl text-blue-500">
-            出力
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-lg">{transcript}</p>
-        </CardContent>
-      </Card>
-      <Button
-        variant="outline"
-        className="py-2 px-4 text-lg bg-blue-500 text-white"
-        onClick={resetTranscript}
-      >
-        リセット
-      </Button>
     </main>
   );
 };
