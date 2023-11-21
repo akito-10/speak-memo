@@ -15,5 +15,3 @@ yarn install
 ```
 yarn dev
 ```
-
-コメントを追加した。
