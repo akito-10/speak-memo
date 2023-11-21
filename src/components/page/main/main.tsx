@@ -61,7 +61,7 @@ export const MainPage = () => {
             className="py-2 px-4 text-lg bg-blue-600 text-white rounded hover:bg-blue-700"
             onClick={resetTranscript}
           >
-            リセットbdfohjhophjaop
+            リセット
           </Button>
         </div>
       </div>
