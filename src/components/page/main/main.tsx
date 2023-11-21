@@ -1,4 +1,5 @@
 "use client";
+
 import "regenerator-runtime";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -36,7 +37,7 @@ export const MainPage = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center h-screen bg-gray-200 p-4">
+    <main className="flex flex-col items-center justify-center h-screen bg-gray-200 p-4 w-full">
       <div className="bg-white rounded-lg shadow-lg p-5 md:p-20 mx-2 w-full max-w-6xl">
         <h1 className="text-4xl text-blue-600 mb-10 text-center">マイク</h1>
         <div className="flex justify-center items-center space-x-4 mb-10">
